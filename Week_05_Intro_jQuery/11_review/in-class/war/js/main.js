@@ -1,57 +1,75 @@
 $(document).ready( function(){
 
+  //generate cards
   var robocards = [1,2,3,4,5,6,7,8,9,10,11,12];
-  var cards = [1,2,3,4,5,6,7,8,9,10,11,12];
+  var cards = [];
+  for( var i = 1; i <= 12; i++) {
+    cards.push(i);
+  }
 
+  //event listener for clicks on play
   $("#play").click( function() {
 
-    if ( robocards.length == 0 ) {
-      $("#yourcard").html("");
-      $("#robotcard").html("");
+   
+    //random integer from 0 to 11
+    var userindex = Math.floor(Math.random()*cards.length);
 
-      $("#winning").html("Game Over. You won all the cards!!! Woo!!!");
+
+    //use random integer to get random card for player
+    var usercard = cards[userindex];
+    $("#yourcard").html(usercard);
+
+    //random integer from 0 to 11
+    var roboindex = Math.floor(Math.random()*robocards.length);
+     
+    //use random integer to get random card for player
+    var robocard = robocards[roboindex];
+    $("#robotcard").html(robocard);
+    
+
+    console.log("roboindex: " + roboindex);
+    console.log("userindex: " + userindex);
+
+    //winning scenario
+    if (robocard < usercard) {
+
+      //print out status saying winning
+      $("#winning").html("You win! You get both cards!");
+
+      //we get to add both cards
+      cards.push(robocard);
+
+      console.log("roboindex: " + roboindex);
+
+      //robot loses their card
+      robocards.splice(roboindex, 1);
+
+      console.log("your deck is: " + cards);
+      console.log("robot deck is: " + robocards);
+
     }
-    else if (cards.length == 0) {
-      $("#yourcard").html("");
-      $("#robotcard").html("");
+    else if (usercard < robocard) {
+      //print out status saying losing
+      $("#winning").html("You lose! You lose your card!");
 
-      $("#winning").html("Game Over. You lost all your cards! Boooo");
+      //i lose my card
+      cards.splice(userindex,1);
+
+      //robot gets a new card
+      robocards.push(usercard);
+
+      console.log("your deck is: " + cards);
+      console.log("robot deck is: " + robocards);
+
+
     }
     else {
-      var botindex = Math.floor(Math.random()*robocards.length);
-      var index = Math.floor(Math.random()*cards.length);
+      $("#winning").html("It's a draw. Nothing happens.");
 
-      var robocard = robocards.splice(botindex,1);
-      var card = cards.splice(index,1);
-      
-      $("#yourcard").html(card);
-      $("#robotcard").html(robocard);
-
-      console.log("robocard is " + robocard);
-      console.log("card is " + card);
-
-      //robocard = parseFloat(robocard);
-      //card = parseFloat(card);
-
-      if(robocard < card) {
-        $("#winning").html("You win! You get both cards!");
-        cards.push(robocard);
-        cards.push(card);
-
-        console.log("resulting cards: " + cards);
-        console.log("resulting robocards: " + robocards);
-      }
-      else if ( card < robocard) {
-        $("#winning").html("You lose! Robot gets to have your card");
-
-        robocards.push(robocard);
-        robocards.push(card);
-
-        console.log("resulting cards: " + cards);
-        console.log("resulting robocards: " + robocards);
-      }
     }
 
+
   });
+ 
 
 });
