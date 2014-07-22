@@ -10,17 +10,23 @@
  * Create an array of image sources. Use image1.png, image2.png, and image3.png as the array values.
  */
 
+ var q1 = ["image1.png", "image2.png", "image3.png"];
+
 
 /**
  * Question 2
  * Using the array from Question 1, store the first element of the array in variable q2.
  */
 
+var q2 = q1[0];
+
+
 /**
  * Question 3
  * Get the length of the first array (number of elements in the array) and store it in variable q3
  */
 
+var q3 = q1.length;
 
 /**
  * Question 4
@@ -28,6 +34,7 @@
  *  Hint: How can we get the number of elements in the array?
  */
 
+var q4 = q1[q3-1];
 
 /**
  * Question 5
@@ -40,6 +47,10 @@
  *        what does eq() do?
  */
 
+
+
+$("img").eq(0).attr("src", q2);
+$("img").eq(-1).attr("src", q4);
 
 
 
