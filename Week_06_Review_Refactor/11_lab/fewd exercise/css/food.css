@@ -1,0 +1,21 @@
+body{
+	background-color: white;
+}
+
+#ingredients{
+	
+	height: 100px;
+	width: 100px;
+}
+
+#itemCount{
+	float: left;
+	height: 100px;
+	width: 100px;
+}
+
+#buyStuffAlert{
+	float: right;
+	height: 100px;
+	width: 100px;
+}
