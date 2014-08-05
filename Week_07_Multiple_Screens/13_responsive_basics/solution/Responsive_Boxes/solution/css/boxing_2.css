@@ -1,0 +1,78 @@
+*{
+	width:100%;
+	border:1px solid black;
+	-moz-box-sizing: border-box; 
+     -webkit-box-sizing: border-box; 
+     box-sizing: border-box; 
+}
+#container,ul,nav,body,html{
+	border:none;
+}
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+ul{
+	padding:0;
+	margin:0;
+}
+
+#container{
+	width:90%;
+	margin:0 auto;
+}
+/*Navigation*/
+nav{
+	height:60px;
+}
+nav li{
+	width:15%;
+	height:40px;
+	float:left;
+	margin:10px;
+}
+nav li:first-child{
+	float:right;
+	display:none;
+}
+.line{
+	height:7px;
+	width:60%;
+	margin:5px auto;
+	border-radius:5px;
+}
+
+/*Main content*/
+header+div{
+	height:400px;
+	margin:20px 0;
+}
+#container>div+div,footer>div{
+	width:30%;
+	height:200px;
+	float:left;
+	margin:10px 1.5%;
+}
+/*footer, also in line 53*/
+footer{
+	clear:left;
+}
+
+/*CSS for new design goes here*/
+
+/*Navigation*/
+nav li{
+	display:none;
+}
+nav li:first-child{
+	display:block;
+}
+
+/*Main and footer*/
+#container>div+div,footer>div{
+	width:97%;/*100%-3% margins*/
+}
