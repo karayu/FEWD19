@@ -124,12 +124,12 @@ p {
 	background: #EEE;
 	background: white;
 	overflow: hidden;
-	padding: 2% 0;
+	/*padding: 2% 0;*/
 }
 .tout {
-	float: left;
+	/*float: left;
 	width: 27.3333%;
-	padding: 2% 3%;
+	padding: 2% 3%;*/
 	box-shadow: inset -1px 0 0 rgba(0,0,0,.15);
 }
 .tout:last-child {

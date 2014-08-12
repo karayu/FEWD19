@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Startup Matchmaker</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oswald:700|Merriweather:700,700italic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/main.css">
@@ -10,8 +11,18 @@
 <body>
 	<header id="page-header">
 		<div class="wrapper">
-			<h1><a href="index.html">Startup Matchmaker</a></h1>
+
+
+
 			<nav>
+			<h1><a href="index.html">Startup Matchmaker</a></h1>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+				<div class="collapse navbar-collapse"
 				<ul>
 					<li><strong><a href="developers.html">Developers</a></strong></li>
 					<li><strong><a href="designers.html">Designers</a></strong></li>			
@@ -19,6 +30,7 @@
 					<li><a href="team.html">Our Team</a></li>			
 					<li><a href="blog.html">Blog</a></li>			
 				</ul>
+			</div>
 			</nav>
 		</div>
 	</header>
@@ -33,22 +45,22 @@
 		</div>
 	</section>
 	<div class="wrapper">
-		<section class="touts">
-			<section class="tout">
+		<section class="touts row">
+			<section class="tout col-md-4">
 				<header>
 					<h3>Create a Profile</h3>
 				</header>
 				<p>Are you a Designer? Developer? Put yourself out there so that others can find you!</p>
 				<a class="button" href="#">Sign Up Now</a>
 			</section>
-			<section class="tout">
+			<section class="tout col-md-4">
 				<header>
 					<h3>Find a Developer</h3>
 				</header>
 				<p>Looking for a fantastic developer to work with on the next big thing? Look no further.</p>
 				<a class="button" href="developers.html">Start Your Search</a>
 			</section>
-			<section class="tout">
+			<section class="tout col-md-4">
 				<header>
 					<h3>Find a Designer</h3>
 				</header>
